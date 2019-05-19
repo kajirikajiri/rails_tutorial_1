@@ -10,10 +10,16 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <%= yield %>
+    <div style="display:flex;flex-direction:column;justify-content:between-space;height:100%;>
+    <div style="background:black">
+      <%= render 'layouts/header' %>
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
-    <%= render 'layouts/footer' %>
+    <div>  
+      <%= render 'layouts/footer' %>
+    </div>
+    </div>
   </body>
 </html>
