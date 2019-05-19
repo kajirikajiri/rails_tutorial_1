@@ -64,3 +64,25 @@ head {
     color: #fff;
     text-decoration: none;
 }
+
+/* footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.footer_inner_wrapper {
+    display: flex;
+    justify-content: space-between;
+    background: black;
+    color: #327AB7;
+}
+.footer_left {
+    display: flex;
+    justify-content: flex-start;
+}
+.footer_right {
+    display:flex;
+    justify-content: flex-end;
+}
