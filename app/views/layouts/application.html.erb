@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="wrapper">
+<html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
@@ -10,16 +10,16 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
-    <div style="display:flex;flex-direction:column;justify-content:between-space;height:100%;>
-    <div style="background:black">
-      <%= render 'layouts/header' %>
+	  <div class="wrapper">
+		  <div class="header">
+			  <%= render 'layouts/header' %>
+		  </div>
       <div class="container">
         <%= yield %>
       </div>
-    </div>
-    <div>  
-      <%= render 'layouts/footer' %>
-    </div>
+      <div class="footer">
+	      <%= render 'layouts/footer' %>
+      </div>
     </div>
   </body>
 </html>
