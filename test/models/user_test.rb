@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "jajajaja", email: "mail@mail.com")
+    @user = User.new(name: "jajajaja", email: "mail@mail.com", password: "foobar", password_confirmation: "foobar")
   end
 
   test "user" do
@@ -47,7 +47,33 @@ class UserTest < ActiveSupport::TestCase
 
   test "mail_unique" do
     dup_mail = @user.dup
+    dup_mail.email = @user.email.upcase
     @user.save
     assert_not dup_mail.valid?
+  end
+  
+  test "mail_downcase" do
+    mix_case_email = "EmAiLaDDress@mail.CoM"
+    @user.email = mix_case_email
+    puts("hhhhhhhhhhhhhhhhhhhhhhhhhhh")
+    puts(@user.email)
+    puts(@user.inspect)
+    @user.save
+    puts(@user.inspect)
+    #@user.reload
+    #reloadしなくても値変わってるじゃないか
+    #bundleしたら変わんなくなった
+    #password_confirmationがないだけだった
+    assert_equal mix_case_email.downcase, @user.email
+  end
+  
+  test "password_non_blank" do
+    @user.password = @user.password_confirmation = " " * 6
+    assert_not @user.valid?
+  end
+  
+  test "password_min_length" do
+    @user.password = @user.password_confirmation =  "a" * 5
+    assert_not @user.valid?
   end
 end
