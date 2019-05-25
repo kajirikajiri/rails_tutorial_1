@@ -12,6 +12,11 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.content {
+    p {
+        text-align: center;
+    }
+}
 section {
     overflow: auto;
 }
