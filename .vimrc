@@ -10,9 +10,7 @@ set background=dark
 colorscheme koehler
 
 if has("autocmd")
-"ファイルタイプの検索を有効にする
 filetype plugin on
-"ファイルタイプに合わせたインデントを利用
 filetype indent on
 "sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
 autocmd FileType c           setlocal sw=4 sts=4 ts=4 et
