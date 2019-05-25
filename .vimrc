@@ -1,0 +1,9 @@
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set cursorline
+set cursorcolumn
+set fenc=utf-8
+set smartindent
+set background=dark
+colorscheme koehler
